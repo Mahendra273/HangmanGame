@@ -33,17 +33,24 @@ type KeyboardProps = {
   activeLetter: string[],
   inactiveLetter: string[],
   addGuessLetter: (letter: string) => void,
-  disabled: boolean
+  disabled: boolean,
+  tryAgain: () => void,
+  gameOver:boolean,
 }
+
+
+
 
 const Keyboard = ({
   activeLetter,
   inactiveLetter,
   addGuessLetter,
-  disabled = false
+  disabled = false,
+  tryAgain,
+  gameOver=true
 }: KeyboardProps) => {
   return (
-    <div className='grid grid-cols-6 lg:grid-cols-75 gap-1 lg:gap-2'>
+    <div className='grid grid-cols-7 gap-1 lg:gap-2'>
       {KEYS.map(key => {
         const isActive = activeLetter.includes(key);
         const isInactive = inactiveLetter.includes(key);
@@ -57,8 +64,15 @@ const Keyboard = ({
             key={key}>
             {key}
           </button>
+
         )
-      })}
+      })}  
+      <button
+      onClick={() => tryAgain()}
+      disabled={!gameOver}
+      className={`${styles.btn} ${!gameOver ? styles.inactive : ''} col-span-2`} 
+      > Try 
+    </button>
     </div>
   )
 }

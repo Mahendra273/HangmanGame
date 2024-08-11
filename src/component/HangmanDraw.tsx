@@ -1,35 +1,36 @@
+import React from "react"
 const HEAD = (
   <div style={{
-    width: '50px',
-    height: '50px',
+    width: '40px',
+    height: '40px',
     borderRadius: '100%',
     border: '7px solid black',
     position: 'absolute',
     top: '45px',
-    right: '-20px'
+    right: '-15px'
   }} />
 )
 
 const BODY = (
   <div style={{
     width: '10px',
-    height: '130px',
+    height: '60px',
     background: 'black',
     position: 'absolute',
-    top: '90px',
-    right: '0'
+    top: '84px',
+    right: '0px'
   }} />
 )
 
 const RIGHT_ARM = (
   <div
     style={{
-      width: "90px",
+      width: "65px",
       height: "10px",
       background: "black",
       position: "absolute",
-      top: "150px",
-      right: "-90px",
+      top: "110px",
+      right: "-65px",
       rotate: "-30deg",
       transformOrigin: "left bottom",
       borderRadius: '12px'
@@ -40,11 +41,11 @@ const RIGHT_ARM = (
 const LEFT_ARM = (
   <div
     style={{
-      width: "90px",
+      width: "65px",
       height: "10px",
       background: "black",
       position: "absolute",
-      top: "150px",
+      top: "110px",
       right: "10px",
       rotate: "30deg",
       transformOrigin: "right bottom",
@@ -56,12 +57,12 @@ const LEFT_ARM = (
 const RIGHT_LEG = (
   <div
     style={{
-      width: "100px",
+      width: "70px",
       height: "10px",
       background: "black",
       position: "absolute",
-      top: "210px",
-      right: "-90px",
+      top: "125px",
+      right: "-60px",
       rotate: "60deg",
       transformOrigin: "left bottom",
       borderRadius: '12px'
@@ -72,11 +73,11 @@ const RIGHT_LEG = (
 const LEFT_LEG = (
   <div
     style={{
-      width: "100px",
+      width: "70px",
       height: "10px",
       background: "black",
       position: "absolute",
-      top: "210px",
+      top: "125px",
       right: 0,
       rotate: "-60deg",
       transformOrigin: "right bottom",
@@ -93,8 +94,11 @@ type HangmanDrawProps = {
 
 const HangmanDraw = ({ numberOfGuess }: HangmanDrawProps) => {
   return (
-    <div style={{ position: 'relative' }}>
-      {BODY_PARTS.slice(0, numberOfGuess)}
+    <div style={{ position: 'relative' }} >
+       {BODY_PARTS.slice(0, numberOfGuess).map((part, index) => (
+        <React.Fragment key={index}>{part}</React.Fragment>
+      ))}
+
       <div style={{
         height: '50px',
         width: '10px',
@@ -107,21 +111,21 @@ const HangmanDraw = ({ numberOfGuess }: HangmanDrawProps) => {
 
       <div style={{
         height: '10px',
-        width: '200px',
+        width: '160px',
         background: 'black',
-        marginLeft: '120px'
+        marginLeft: '100px'
       }} />
 
       <div style={{
-        height: '400px',
+        height: '180px',
         width: '10px',
         background: 'black',
-        marginLeft: '120px'
+        marginLeft: '100px'
       }} />
 
       <div style={{
         height: '10px',
-        width: '250px',
+        width: '200px',
         background: 'black',
         borderRadius: '12px'
       }} />
