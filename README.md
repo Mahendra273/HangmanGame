@@ -20,7 +20,5 @@ git clone https://github.com/dilarauluturhan/hangman.git
 After cloning the project to your computer, you must open it in Visual Studio Code. You can open the project in `localhost:3000` by saying `npm run start`.
 
 ## Live✨
-[https://hangman-with-react-ts.vercel.app](https://hangman-with-react-ts.vercel.app)
 
 ## Contact With✨
-Dilara Uluturhan - [LinkedIn](https://www.linkedin.com/in/dilarauluturhan/) - dilarauluturhan@outlook.com
